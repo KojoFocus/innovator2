@@ -145,7 +145,7 @@ const TechCompanyApp = () => {
               </div>
               <div className="mb-6">
                 <label htmlFor="message" className="block text-sm font-medium text-[#2C3E50]">Message</label>
-                <textarea id="message" name="message" rows="4" className="mt-2 block w-full border border-[#D3D3D3] rounded-lg py-2 px-4 text-[#2C3E50] bg-white"></textarea>
+                <textarea id="message" name="message" rows={4} className="mt-2 block w-full border border-[#D3D3D3] rounded-lg py-2 px-4 text-[#2C3E50] bg-white"></textarea>
               </div>
               <button type="submit" className="w-full px-6 py-3 bg-[#1F8CFF] text-white text-lg font-bold rounded-lg shadow-md hover:shadow-lg transition-all">
                 Send Message

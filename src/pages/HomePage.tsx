@@ -25,7 +25,7 @@ const HomePage = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
-            {["Home", "Products", "Solutions", "About Us", "Contact"].map((section) => (
+            {["Home", "Solutions", "Products", "About Us", "Contact"].map((section) => (
               <Link
                 key={section}
                 to={section.toLowerCase().replace(" ", "")} // Set to corresponding section id
@@ -47,7 +47,7 @@ const HomePage = () => {
 
         {isMenuVisible && (
           <div className="md:hidden bg-[#34495E] py-4">
-            {["Home", "Products", "Solutions", "About Us", "Contact"].map((section) => (
+            {["Home", "Solutions", "Products", "About Us", "Contact"].map((section) => (
               <Link
                 key={section}
                 to={section.toLowerCase().replace(" ", "")} // Set to corresponding section id

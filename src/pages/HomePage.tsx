@@ -227,7 +227,7 @@ const HomePage = () => {
                   )}`;
                   window.open(whatsappLink, "_blank");
                 }}
-                className="px-8 py-4 bg-[#25D366] text-white rounded-lg font-semibold w-full"
+                className="px-8 py-4 bg-gradient-to-r from-[#FFA502] to-[#FF6348] text-white rounded-lg font-semibold w-full"
               >
                 Chat on WhatsApp
               </button>

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import soap from "../assets/product1.png";
-import lotion from "../assets/product2.png";
-import showerGel from "../assets/product3.png";
+import soap from "../assets/sanitizer.avif";
+import lotion from "../assets/lotion.jpg";
+import showerGel from "../assets/showergel.avif";
 
 const HomePage = () => {
   const [isMenuVisible, setIsMenuVisible] = useState(false);
@@ -127,7 +127,7 @@ const HomePage = () => {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
           {[
-            { img: soap, name: "Soap" },
+            { img: soap, name: "Sanitizer" },
             { img: lotion, name: "Lotion" },
             { img: showerGel, name: "Shower Gel" },
           ].map((product) => (

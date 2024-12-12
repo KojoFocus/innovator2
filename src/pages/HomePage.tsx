@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
+import { Link } from "react-scroll"; // Import Link from react-scroll
+
 import soap from "../assets/sanitizer.avif";
 import lotion from "../assets/lotion.jpg";
 import showerGel from "../assets/showergel.avif";
@@ -23,17 +25,18 @@ const HomePage = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
-            {["Home", "Products", "Solutions", "About Us", "Contact"].map(
-              (section) => (
-                <a
-                  key={section}
-                  href={`#${section.toLowerCase().replace(" ", "")}`}
-                  className="text-white text-lg hover:text-[#FFC312] transition-all"
-                >
-                  {section}
-                </a>
-              )
-            )}
+            {["Home", "Products", "Solutions", "About Us", "Contact"].map((section) => (
+              <Link
+                key={section}
+                to={section.toLowerCase().replace(" ", "")} // Set to corresponding section id
+                smooth={true} // Enable smooth scrolling
+                duration={500} // Duration of the scroll animation
+                offset={-70} // Offset to account for fixed navbar
+                className="text-white text-lg hover:text-[#FFC312] transition-all"
+              >
+                {section}
+              </Link>
+            ))}
           </div>
 
           {/* Mobile Menu */}
@@ -44,23 +47,24 @@ const HomePage = () => {
 
         {isMenuVisible && (
           <div className="md:hidden bg-[#34495E] py-4">
-            {["Home", "Products", "Solutions", "About Us", "Contact"].map(
-              (section) => (
-                <a
-                  key={section}
-                  href={`#${section.toLowerCase().replace(" ", "")}`}
-                  className="block px-4 py-3 text-white hover:bg-[#FFC312] transition-all"
-                >
-                  {section}
-                </a>
-              )
-            )}
+            {["Home", "Products", "Solutions", "About Us", "Contact"].map((section) => (
+              <Link
+                key={section}
+                to={section.toLowerCase().replace(" ", "")} // Set to corresponding section id
+                smooth={true} // Enable smooth scrolling
+                duration={500} // Duration of the scroll animation
+                offset={-70} // Offset to account for fixed navbar
+                className="block px-4 py-3 text-white hover:bg-[#FFC312] transition-all"
+              >
+                {section}
+              </Link>
+            ))}
           </div>
         )}
       </nav>
 
       {/* Hero Section */}
-      <section className="hero min-h-screen bg-[#E67E22] text-white flex items-center justify-center text-center px-8">
+      <section className="hero min-h-screen bg-[#E67E22] text-white flex items-center justify-center text-center px-8" id="home">
         <div className="w-full max-w-2xl">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
             Embrace Your Natural Glow
@@ -201,7 +205,7 @@ const HomePage = () => {
         </div>
         <div className="flex justify-center">
           <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
-          <form>
+            <form>
               {/* Form Inputs */}
               <button
                 type="button"
@@ -213,45 +217,24 @@ const HomePage = () => {
                   )}`;
                   window.open(whatsappLink, "_blank");
                 }}
-                className="px-8 py-4 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-[#FFA502] to-[#FF6348] rounded-lg shadow-md hover:shadow-lg transition-all"
+                className="w-full px-8 py-4 text-xl font-semibold text-white bg-gradient-to-r from-[#FFA502] to-[#FF6348] rounded-lg shadow-md hover:shadow-lg transition-all"
               >
-                Send Message
+                Chat with Us on WhatsApp
               </button>
             </form>
           </div>
         </div>
       </section>
-     
+
       {/* Footer */}
-      <footer className="bg-[#34495E] py-6 text-white">
-        <div className="text-center space-y-4">
-          <div className="flex justify-center space-x-6">
-            <a
-              href="https://facebook.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-[#FFC312]"
-            >
-              <FaFacebook size={24} />
-            </a>
-            <a
-              href="https://twitter.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-[#FFC312]"
-            >
-              <FaTwitter size={24} />
-            </a>
-            <a
-              href="https://instagram.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-[#FFC312]"
-            >
-              <FaInstagram size={24} />
-            </a>
+      <footer className="bg-[#34495E] text-white py-6">
+        <div className="text-center">
+          <p className="text-lg">&copy; 2024 Glow Cosmetics. All rights reserved.</p>
+          <div className="flex justify-center space-x-4 mt-4">
+            <FaFacebook className="hover:text-[#E67E22] cursor-pointer" />
+            <FaTwitter className="hover:text-[#E67E22] cursor-pointer" />
+            <FaInstagram className="hover:text-[#E67E22] cursor-pointer" />
           </div>
-          <p>&copy; 2024 Glow Cosmetics. All rights reserved.</p>
         </div>
       </footer>
     </div>

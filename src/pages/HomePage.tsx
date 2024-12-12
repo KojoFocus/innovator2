@@ -72,8 +72,18 @@ const HomePage = () => {
           <p className="py-6 text-lg sm:text-xl">
             Premium skincare products crafted for radiant, healthy skin.
           </p>
-          <button className="px-8 py-4 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-[#FFA502] to-[#FF6348] rounded-lg shadow-md hover:shadow-lg transition-all">
-            Shop Now
+          {/* Updated button */}
+          <button
+            onClick={() => {
+              // Scroll to the About Us section when clicked
+              const aboutUsSection = document.getElementById("aboutus");
+              if (aboutUsSection) {
+                aboutUsSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="px-8 py-4 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-[#FFA502] to-[#FF6348] rounded-lg shadow-md hover:shadow-lg transition-all"
+          >
+            Learn More
           </button>
         </div>
       </section>
@@ -217,9 +227,9 @@ const HomePage = () => {
                   )}`;
                   window.open(whatsappLink, "_blank");
                 }}
-                className="w-full px-8 py-4 text-xl font-semibold text-white bg-gradient-to-r from-[#FFA502] to-[#FF6348] rounded-lg shadow-md hover:shadow-lg transition-all"
+                className="px-8 py-4 bg-[#25D366] text-white rounded-lg font-semibold w-full"
               >
-                Chat with Us on WhatsApp
+                Chat on WhatsApp
               </button>
             </form>
           </div>
@@ -227,13 +237,19 @@ const HomePage = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-[#34495E] text-white py-6">
+      <footer className="bg-[#34495E] text-white py-8">
         <div className="text-center">
-          <p className="text-lg">&copy; 2024 Glow Cosmetics. All rights reserved.</p>
-          <div className="flex justify-center space-x-4 mt-4">
-            <FaFacebook className="hover:text-[#E67E22] cursor-pointer" />
-            <FaTwitter className="hover:text-[#E67E22] cursor-pointer" />
-            <FaInstagram className="hover:text-[#E67E22] cursor-pointer" />
+          <p>&copy; 2024 Glow Cosmetics</p>
+          <div className="flex justify-center space-x-8 pt-4">
+            <a href="#" className="text-white hover:text-[#FFC312]">
+              <FaFacebook size={30} />
+            </a>
+            <a href="#" className="text-white hover:text-[#FFC312]">
+              <FaTwitter size={30} />
+            </a>
+            <a href="#" className="text-white hover:text-[#FFC312]">
+              <FaInstagram size={30} />
+            </a>
           </div>
         </div>
       </footer>

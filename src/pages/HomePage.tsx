@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { FaBars, FaTimes, FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
-import { Link } from "react-scroll"; // Import Link from react-scroll
-
+import { Link } from "react-scroll";
 import soap from "../assets/sanitizer.avif";
 import lotion from "../assets/lotion.jpg";
 import showerGel from "../assets/showergel.avif";
@@ -20,18 +19,18 @@ const HomePage = () => {
             href="#"
             className="flex items-center space-x-2 text-[#E67E22] text-3xl font-extrabold"
           >
-            <span>Glow Cosmetics</span>
+            <span>Maku's Cosmetic Enterprise</span>
           </a>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex space-x-10">
-            {["Home", "Solutions", "Products", "About Us", "Contact"].map((section) => (
+            {["Home", "Solutions", "Products", "Contact"].map((section) => (
               <Link
                 key={section}
-                to={section.toLowerCase().replace(" ", "")} // Set to corresponding section id
-                smooth={true} // Enable smooth scrolling
-                duration={500} // Duration of the scroll animation
-                offset={-70} // Offset to account for fixed navbar
+                to={section.toLowerCase().replace(" ", "")}
+                smooth={true}
+                duration={500}
+                offset={-70}
                 className="text-white text-lg hover:text-[#FFC312] transition-all"
               >
                 {section}
@@ -47,13 +46,13 @@ const HomePage = () => {
 
         {isMenuVisible && (
           <div className="md:hidden bg-[#34495E] py-4">
-            {["Home", "Solutions", "Products", "About Us", "Contact"].map((section) => (
+            {["Home", "Solutions", "Products", "Contact"].map((section) => (
               <Link
                 key={section}
-                to={section.toLowerCase().replace(" ", "")} // Set to corresponding section id
-                smooth={true} // Enable smooth scrolling
-                duration={500} // Duration of the scroll animation
-                offset={-70} // Offset to account for fixed navbar
+                to={section.toLowerCase().replace(" ", "")}
+                smooth={true}
+                duration={500}
+                offset={-70}
                 className="block px-4 py-3 text-white hover:bg-[#FFC312] transition-all"
               >
                 {section}
@@ -64,24 +63,22 @@ const HomePage = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="hero min-h-screen bg-[#E67E22] text-white flex items-center justify-center text-center px-8" id="home">
+      <section className="hero min-h-screen bg-gradient-to-r from-[#FFA502] to-[#FF6348] text-white flex items-center justify-center text-center px-8" id="home">
         <div className="w-full max-w-2xl">
           <h1 className="text-4xl sm:text-5xl font-bold leading-tight">
-            Embrace Your Natural Glow
+            Empowering Accessibility in Skincare
           </h1>
           <p className="py-6 text-lg sm:text-xl">
-            Premium skincare products crafted for radiant, healthy skin.
+            Breaking barriers with innovative solutions for visually impaired individuals.
           </p>
-          {/* Updated button */}
           <button
             onClick={() => {
-              // Scroll to the About Us section when clicked
-              const aboutUsSection = document.getElementById("aboutus");
-              if (aboutUsSection) {
-                aboutUsSection.scrollIntoView({ behavior: "smooth" });
+              const solutionsSection = document.getElementById("solutions");
+              if (solutionsSection) {
+                solutionsSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="px-8 py-4 text-lg sm:text-xl font-semibold text-white bg-gradient-to-r from-[#FFA502] to-[#FF6348] rounded-lg shadow-md hover:shadow-lg transition-all"
+            className="px-8 py-4 text-lg sm:text-xl font-semibold text-white bg-[#34495E] rounded-lg shadow-md hover:shadow-lg transition-all"
           >
             Learn More
           </button>
@@ -92,30 +89,22 @@ const HomePage = () => {
       <section className="py-16 bg-[#F9F9F9] px-8" id="solutions">
         <div className="text-center mb-12">
           <h2 className="text-3xl sm:text-4xl font-bold text-[#2C3E50]">
-            Why Choose Us?
+            What Problem Are We Solving?
           </h2>
           <p className="py-4 text-lg sm:text-xl">
-            Skincare solutions that nourish and rejuvenate.
+            Addressing the challenge of overdependence of visually impaired people on sight for designing and cutting bar soaps.
           </p>
         </div>
         <div className="flex flex-wrap justify-center gap-12">
-          {[
-            {
-              title: "Natural Ingredients",
-              content:
-                "Our products are crafted with the finest natural ingredients for a gentle yet effective skincare experience.",
-            },
-            {
-              title: "Dermatologist Approved",
-              content:
-                "Trusted by experts to provide the best care for your skin.",
-            },
-            {
-              title: "Eco-Friendly Packaging",
-              content:
-                "Sustainability is at our core, with recyclable and eco-friendly materials.",
-            },
-          ].map((solution, index) => (
+          {[{
+            title: "Innovative Soap Cutting Board",
+            content:
+              "A specially designed soap cutting board tailored for persons with disabilities to foster independence."
+          }, {
+            title: "Empowering Skincare Production",
+            content:
+              "Producing high-quality soaps accessible to everyone while promoting inclusivity in the skincare industry."
+          }].map((solution, index) => (
             <div
               key={index}
               className="bg-[#FFFFFF] shadow-lg border border-[#E67E22] rounded-xl p-8 w-80"
@@ -136,15 +125,11 @@ const HomePage = () => {
             Our Products
           </h2>
           <p className="py-4 text-lg sm:text-xl">
-            Luxurious skincare essentials for your daily routine.
+            High-quality, inclusive skincare products made with care and precision.
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-12">
-          {[
-            { img: soap, name: "Sanitizer" },
-            { img: lotion, name: "Lotion" },
-            { img: showerGel, name: "Shower Gel" },
-          ].map((product) => (
+          {[{ img: soap, name: "Sanitizer" }, { img: lotion, name: "Lotion" }, { img: showerGel, name: "Shower Gel" }].map((product) => (
             <div
               key={product.name}
               className="bg-[#FFFFFF] shadow-lg border border-[#E67E22] rounded-xl hover:scale-105 transition-all"
@@ -167,42 +152,6 @@ const HomePage = () => {
         </div>
       </section>
 
-      {/* About Us Section */}
-      <section className="py-16 bg-[#FFFFFF] px-8" id="aboutus">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl sm:text-4xl font-bold text-[#2C3E50]">
-            About Us
-          </h2>
-          <p className="py-4 text-lg sm:text-xl">
-            Glow Cosmetics is committed to delivering skincare excellence.
-          </p>
-        </div>
-        <div className="flex justify-center gap-12">
-          {[
-            {
-              title: "Our Vision",
-              content:
-                "To be a global leader in natural skincare innovation.",
-            },
-            {
-              title: "Our Mission",
-              content:
-                "Creating products that celebrate the beauty of natural ingredients and sustainable living.",
-            },
-          ].map((info, index) => (
-            <div
-              key={index}
-              className="bg-[#FFFFFF] shadow-lg border border-[#E67E22] rounded-xl p-8 w-80"
-            >
-              <h3 className="text-2xl text-[#E67E22] font-semibold">
-                {info.title}
-              </h3>
-              <p className="mt-4 text-lg">{info.content}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* Contact Section */}
       <section className="py-16 bg-[#F1F2F6] px-8" id="contact">
         <div className="text-center mb-12">
@@ -210,21 +159,18 @@ const HomePage = () => {
             Contact Us
           </h2>
           <p className="py-4 text-lg sm:text-xl text-[#2C3E50]">
-            Let’s talk about your skincare needs.
+            Get in touch to learn more about our innovation.
           </p>
         </div>
         <div className="flex justify-center">
           <div className="max-w-2xl mx-auto bg-white shadow-lg rounded-lg p-8">
             <form>
-              {/* Form Inputs */}
               <button
                 type="button"
                 onClick={() => {
                   const message = "Hello, I would like more information.";
                   const phoneNumber = "+233540484052";
-                  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
-                    message
-                  )}`;
+                  const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                   window.open(whatsappLink, "_blank");
                 }}
                 className="px-8 py-4 bg-gradient-to-r from-[#FFA502] to-[#FF6348] text-white rounded-lg font-semibold w-full"
@@ -239,7 +185,7 @@ const HomePage = () => {
       {/* Footer */}
       <footer className="bg-[#34495E] text-white py-8">
         <div className="text-center">
-          <p>&copy; 2024 Glow Cosmetics</p>
+          <p>&copy; 2024 Maku's Cosmetic Enterprise</p>
           <div className="flex justify-center space-x-8 pt-4">
             <a href="#" className="text-white hover:text-[#FFC312]">
               <FaFacebook size={30} />

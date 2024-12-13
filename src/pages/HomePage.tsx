@@ -169,7 +169,7 @@ const HomePage = () => {
                 type="button"
                 onClick={() => {
                   const message = "Hello, I would like more information.";
-                  const phoneNumber = "+233540484052";
+                  const phoneNumber = "+233246476575";
                   const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
                   window.open(whatsappLink, "_blank");
                 }}
